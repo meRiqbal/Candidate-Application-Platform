@@ -1,57 +1,87 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.filter-container .col-md-2,
+.filter-container .col-md-1 {
+  flex-grow: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter-container .btn {
+  margin-left: 5px;
 }
-/* Custom CSS to display three cards in one row */
-.job-card {
-  flex: 0 0 calc(33.333% - 15px); /* Adjust the width as needed */
-  margin-right: 15px; /* Adjust the spacing between cards */
+.filter-container {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-@media (max-width: 992px) {
-  .job-card {
-    flex: 0 0 calc(50% - 15px); /* Adjust the width for medium screens */
-  }
+.filter-container .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-@media (max-width: 768px) {
-  .job-card {
-    flex: 0 0 100%; /* Full width for small screens */
-    margin-right: 0; /* No margin on small screens */
-    margin-bottom: 15px; /* Add spacing between rows on small screens */
-  }
+.filter-container .col-md-2,
+.filter-container .col-md-1 {
+  flex-grow: 1;
+}
+
+.filter-line {
+  border-top: 1px solid black;
+}
+
+.form-control {
+  border-radius: 20px;
+}
+
+.btn-secondary {
+  margin-left: 10px;
+}
+/* Custom CSS */
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-line {
+  border-top: 1px solid black;
+  margin: 20px 0;
+}
+
+/* Make the search and select inputs more attractive */
+.form-control {
+  border-radius: 20px;
+  border-color: #ddd; /* Light gray border color */
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* Dark gray background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 8px 20px; /* Increase padding for a larger button */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 8px 20px; /* Increase padding for a larger button */
+}
+
+/* Apply custom styling to the filter inputs */
+.filter-input {
+  border-radius: 20px;
+  border-color: #ddd;
+  padding: 10px;
+}
+
+/* Apply custom styling to the select input */
+.filter-select {
+  border-radius: 20px;
+  border-color: #ddd;
+  padding: 10px;
 }

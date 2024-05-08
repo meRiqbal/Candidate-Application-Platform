@@ -1,92 +1,120 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom"; // Assuming you're using React Router for navigation
+
 const Wrapper = styled.section`
-  /* App.css */
-
-  /* Custom Navbar */
-  .custom-navbar {
-    background-color: #333; /* Dark background color */
+  /* Navbar styles */
+  .navbar {
+    border-bottom: 2px solid #333;
+    padding: 10px 0;
   }
 
-  /* Logo Image */
-  .logo-img {
-    width: 120px; /* Adjust according to your logo size */
-    height: auto;
+  .navbar-brand {
+    font-size: 1.8rem;
+    color: #fff;
+    transition: color 0.3s ease;
+    margin-right: auto; /* Pushes the brand to the left */
   }
 
-  /* Navbar Links */
-  .navbar-nav .nav-link {
-    color: #fff; /* Text color */
-    font-weight: 500; /* Font weight */
-    margin-left: 15px; /* Spacing between links */
+  .navbar-brand:hover {
+    color: #ffd700; /* Change brand color on hover */
   }
 
-  /* Hover effect on Navbar Links */
-  .navbar-nav .nav-link:hover {
-    color: #ffc107; /* Change text color on hover */
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1.5rem;
   }
 
-  /* Active Navbar Link */
-  .navbar-nav .nav-link.active {
-    color: #ffc107; /* Active link text color */
+  /* Navigation links styles */
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-end; /* Aligns links to the right */
   }
 
-  /* Navbar Toggle Icon Color */
-  .navbar-toggler-icon {
-    background-color: #fff; /* Toggle icon color */
+  .nav-item {
+    margin-left: 15px; /* Adjust spacing between links */
   }
 
-  /* Responsive Navbar Collapse */
-  @media (max-width: 768px) {
-    .navbar-nav .nav-link {
-      margin-left: 0; /* Adjust spacing for smaller screens */
+  .nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffd700; /* Change link color on hover */
+  }
+
+  /* Animation for navbar */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
     }
   }
+
+  .navbar-nav {
+    animation: slideIn 0.5s forwards;
+  }
+
+  /* Background gradient effect */
+  .navbar {
+    background: linear-gradient(to right, #3a3a3a, #000000);
+  }
+
+  /* Active link styles */
+  .navbar-nav .active .nav-link {
+    color: #ffd700; /* Change active link color */
+  }
 `;
-const Nav = () => {
+
+const Navbar = () => {
   return (
     <Wrapper>
-      <nav className="navbar navbar-expand-lg navbar-dark custom-navbar">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand" href="#home">
-            <img
-              src="/logo.png" // Replace with your logo image
-              alt="Your Logo"
-              className="d-inline-block align-top logo-img"
-            />
-          </a>
+          <NavLink className="navbar-brand" to="/">
+            Jobs Provider
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ml-auto">
+          <div
+            className="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#home">
+                <NavLink className="nav-link" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#about">
+                <NavLink className="nav-link" to="/about">
                   About
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#services">
+                <NavLink className="nav-link" to="/services">
                   Services
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
+                <NavLink className="nav-link" to="/contact">
                   Contact
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -96,4 +124,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;
